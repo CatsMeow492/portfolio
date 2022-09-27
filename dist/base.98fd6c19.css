@@ -1,0 +1,102 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+:root {
+	font-size: 16px;
+}
+
+body {
+	margin: 0;
+	--color-text: #d8d8d8;
+	--color-bg: #060606;
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	overflow-x: hidden;
+}
+
+/* Page Loader */
+.js .loading::before,
+.js .loading::after {
+	content: '';
+	position: fixed;
+	z-index: 1000;
+}
+
+.js .loading::before {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--color-bg);
+}
+
+.js .loading::after {
+	top: 50%;
+	left: 50%;
+	width: 60px;
+	height: 60px;
+	margin: -30px 0 0 -30px;
+	border-radius: 50%;
+	opacity: 0.4;
+	background: var(--color-bg);
+	animation: loaderAnim 0.7s linear infinite alternate forwards;
+
+}
+
+@keyframes loaderAnim {
+	to {
+		opacity: 1;
+		transform: scale3d(0.5,0.5,1);
+	}
+}
+
+main {
+	text-align: center;
+	padding: 2rem;
+	position: relative;
+}
+
+main::before {
+	animation: grain 8s steps(10) infinite;
+	background-image: url(/noise.4ceed601.png);
+	content: '';
+	height: 300%;
+	left: -50%;
+	opacity: 0.5;
+	position: fixed;
+	top: -100%;
+	width: 300%;
+	pointer-events: none;
+}
+
+@keyframes grain {
+  0%, 100% { transform:translate(0, 0); }
+  10% { transform:translate(-5%, -10%); }
+  20% { transform:translate(-15%, 5%); }
+  30% { transform:translate(7%, -25%); }
+  40% { transform:translate(-5%, 25%); }
+  50% { transform:translate(-15%, 10%); }
+  60% { transform:translate(15%, 0%); }
+  70% { transform:translate(0%, 15%); }
+  80% { transform:translate(3%, 35%); }
+  90% { transform:translate(-10%, 10%); }
+}
+
+canvas{
+	position: relative;
+}
+.webgl {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+section{
+	width: 100%;
+	height: 100vh;
+}
+
+/*# sourceMappingURL=/base.98fd6c19.css.map */

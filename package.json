@@ -1,0 +1,22 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-glsl": "^2.3.2",
+    "parcel": "^2.3.2"
+  },
+  "dependencies": {
+    "glsl-noise": "^0.0.0",
+    "glsl-rotate": "^1.1.0",
+    "gsap": "^3.9.1",
+    "three": "^0.138.0"
+  }
+}
